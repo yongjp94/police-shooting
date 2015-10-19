@@ -1,36 +1,93 @@
 <!doctype html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Police Shootings</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Police Shootings</title>
 
-    <!-- jQuery, Bootstrap -->
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- jQuery, Bootstrap -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">      </script>
+        
+        <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+
+<!-- leaflet libraries -->
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+<!-- Custom files -->
+        <script type="text/javascript" src="js/map.js"></script>
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
     
-    <!-- leaflet libraries -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-
-    <!-- Custom files -->
-    <script type="text/javascript" src="js/map.js"></script>
-    <link rel="stylesheet" href="css/main.css"/>
-   
-  </head>
-  <body>
-    <!-- You may want to put your title and additional informaiton here -->
-    <div class="container">
-      <!-- This is the div that your map will go in.  You'll need to reference its id -->
-      <div id="container"></div>
-    </div>
-    <script>
-      
-      // This is where you should execute your drawMap function
-      
-    </script>
-  </body>
+    <body>
+<!-- You may want to put your title and additional informaiton here -->
+        <div class="jumbotron">
+            <h1>Police Shootings in U.S.A.</h1>
+        </div>
+        
+        <div class="container" id="info">
+            <p>
+                This map displays reports of police-related shootings in U.S. from the past few years (2011~2014). The data set is separated for each race in order to showcase comparison among the different races that are involved in police shootings. The data sets were crowdsourced from a popular website <a href="http://regressing.deadspin.com/deadspin-police-shooting-database-update-were-still-go-1627414202">Deadspin</a>. Each race is represented in a different color.
+                <br />
+                <br />
+                Please begin the observation by clicking and enabling a layer category from the menu on the top right corner of the map. 
+                <br />
+                <br />
+                Color Map:
+                <br />
+                <span style='color : #a9a9a9'>White</span>
+                <span>Black</span>
+                <span style='color : yellow'>Asian</span>
+                <span style='color : brown'>Hispanic</span>
+                <span style='color : #ffc0cb'>Unknown</span>
+            </p>
+        </div>
+        
+        <div class="container">
+<!-- This is the div that your map will go in.  You'll need to reference its id -->
+            <div id="map"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="container">
+            <table class="table table-striped table-bordered" id="race-table">
+                <caption>Victims of Police Shootings by Race</caption>
+                <tr>
+                    <th>Race</th>
+                    <th># of Incidents</th>
+                </tr>
+                <tr>
+                    <td>White</td>
+                    <td id="white-num"></td>
+                </tr>
+                <tr>
+                    <td>Black</td>
+                    <td id="black-num"></td>
+                </tr>
+                <tr>
+                    <td>Asian</td>
+                    <td id="azn-num"></td>
+                </tr>
+                <tr>
+                    <td>Hispanic</td>
+                    <td id="hisp-num"></td>
+                </tr>
+                <tr>
+                    <td>Unknown</td>
+                    <td id="unknown-num"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <script>
+            // This is where you should execute your drawMap function
+            drawMap();
+        </script>
+    </body>
 </html>

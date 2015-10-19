@@ -1,4 +1,54 @@
 /* You'll probably want to add some styles here */
-#container {
-	height:800px;
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100);
+
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16px;
+}
+
+#map {
+	height: 800px;
+    margin-top: 5em;
+}
+
+#info p {
+    text-align: center;
+    padding: 1em;
+    font-size: 1.3em;
+    font-weight: 200;
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+span {
+    font-weight: 400;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 100;
+}
+
+.jumbotron {
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: #d3d3d3;
+    padding: 1em;
+    margin: 1em;
+}
+
+.table {
+    font-weight: 300;
+    font-size: 1.5em;
+    background-color: #d3d3d3;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    
+}
+
+caption {
+    text-align: center;
+    font-family: inherit;
+    font-size: 2em;
 }
